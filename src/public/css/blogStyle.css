@@ -1,0 +1,106 @@
+body {
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCI+CjxmaWx0ZXIgaWQ9Im4iPgo8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjEwIiBzdGl0Y2hUaWxlcz0ic3RpdGNoIj48L2ZlVHVyYnVsZW5jZT4KPC9maWx0ZXI+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIiBmaWx0ZXI9InVybCgjbikiIG9wYWNpdHk9IjAuNCI+PC9yZWN0Pgo8L3N2Zz4=");
+}
+
+.blog {
+    width: 65%;
+}
+
+.burger {
+    display: none;
+}
+
+.blog-nav {
+    display: flex;
+    padding-inline-start: 0;
+}
+
+.burger div{
+    margin: 5px;
+    width: 25px;
+    height: 3px;
+    background-color: rgb(46, 135, 252);
+}
+
+.blog-nav li {
+    justify-content: space-around;
+    text-align: center;
+    list-style: none;
+}
+
+.blog-nav li a {
+    float: right;
+    margin-top: 17px;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+    color: rgb(99, 170, 129);
+    text-decoration: none;
+}
+
+.blog-nav li a:hover {
+    transition: 0.2s ease-out;
+    color: rgb(27, 230, 152);
+    text-decoration: none;
+}
+
+@media only screen and (max-width:600px) {
+
+    .blog-body {
+        z-index: 1;
+    }
+
+    .burger{
+        position: relative;
+        z-index: 4;
+        margin: 5px;
+        display: block;
+    }
+
+    .blog {
+        margin: 5px;
+        width: auto;
+    }
+
+    .blog-nav {
+        z-index: 2;
+        transition: transform 0.2s ease-in;
+        overflow-x: hidden;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        height: 92vh;
+        right: 0;
+        top: 0;
+        background-color: rgb(218, 218, 218);
+        align-items: center;
+        transform: translateY(-110%)
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .blog {
+        margin: 5px;
+        width: 95%;
+    }
+}
+
+.nav-active {
+    position: fixed;
+    height: 100vh;
+    background-color: rgb(218, 218, 218);
+    transform: translateY(0%);
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}

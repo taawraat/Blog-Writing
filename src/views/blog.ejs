@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/Style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Blog</title>
+</head>
+<body>
+<div class="body container">
+    <%- include('_header_') %>
+    <% blogs.forEach(blog => { %>
+    <div class="card m-4">
+        <div class="card-body">
+            <h4 class="text-info card-title"> <%= blog.title %> </h4>
+                <div class="card-subtitle text-muted mb-2">
+                    <%= blog.createdAt.toLocaleDateString("en-BD", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
+                </div>
+            <div class="card-text mb-2"> <%= blog.description %> </div>
+            <a href="/blog/<%= blog.slug %>" class="btn btn-primary">Read more</a>
+            <% if(loggedIn) { %>
+                <form action="/blog/<%= blog.id %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+                <a href="/blog/edit/<%= blog.id %>" class="btn btn-info">Edit</a>
+            <% } %>
+        </div>
+    </div>
+    <% }) %>
+
+    <div class="container">
+        <ul class="pagination pagination-sm">
+            <% for(var page = 1; page <=pages ; page++){ %>
+                <li id="page=<%- page %>" class="page-item ml-2 mb-3"><a class="page-link" href="/blog?page=<%- page %>"><%= page %></a></li>
+            <% } %>
+        </ul>
+    </div>
+
+    
+</div>
+
+<script src="scripts/navbar.js"></script>
+</body>
+<script>
+    var page = document.getElementById(location.search.replace('?',''));
+
+    page.className += " disabled";
+
+    window.addEventListener("scroll", function() {
+        var nav = document.querySelector("nav");
+        nav.classList.toggle("sticky", (window.scrollY > 0 && window.innerWidth >= 600));
+    })
+</script>
+</html>

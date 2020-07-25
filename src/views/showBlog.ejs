@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/blogStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/atom-one-dark.min.css">
+    <title>New Article</title>
+</head>
+
+<body class="container">
+    <nav>
+        <div class="burger">
+            <div class="line1 text-primary"></div>
+            <div class="line2 text-primary"></div>
+            <div class="line3 text-primary"></div>
+        </div>
+        <ul class="blog-nav">
+            <li class="mr-3 mb-2"><a href="/">HOME</a></li>
+            <li class="mr-3 mb-2"><a href="/blog?page=1">BLOGS</a></li>
+            <li class="mr-3 mb-2"><a href="/contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="blog-body mt-3">
+        <h2 class="mb-1 text-info"> <%= blog.title %> </h2>
+        <div class="text-muted mb-4">
+            <%= blog.createdAt.toLocaleDateString("en-BD", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
+        </div>
+        <div class="blog text-light">
+            <%- blog.sanitizedHtlml %>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+<script>
+    const burger = document.querySelector('.burger')
+    const nav = document.querySelector('.blog-nav')
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active')
+        burger.classList.toggle('toggle')
+    })
+</script>
+
+</html>

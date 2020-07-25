@@ -1,0 +1,41 @@
+{
+  "name": "myblogsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taawraat/MyBlogSite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taawraat/MyBlogSite/issues"
+  },
+  "homepage": "https://github.com/taawraat/MyBlogSite#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "dompurify": "^2.0.12",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "highlight.js": "^10.1.1",
+    "jsdom": "^16.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^1.1.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.24",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "query-string": "^6.13.1",
+    "slugify": "^1.4.4"
+  }
+}
