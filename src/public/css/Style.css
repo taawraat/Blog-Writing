@@ -134,6 +134,15 @@ li a:hover {
         align-items: center;
         transform: translateY(-110%)
     }
+
+    .social {
+        margin-top: 30px;
+    }
+
+    .social a svg {
+        height: 7%;
+        width: 7%;
+    }
 }
 
 .nav-active {
