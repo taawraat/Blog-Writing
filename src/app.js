@@ -56,4 +56,4 @@ app.use('/auth/my/secret/path', auth);
 app.use('/blog', blogRoute);
 app.use('/contact', contactRoute);
 
-server.listen(5000, () => console.log('connected'))
+server.listen(process.env.PORT || 5000, () => console.log('connected'))
