@@ -11,7 +11,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/atom-one-dark.min.css">
-    <title>New Article</title>
+    <title>Read Blog</title>
 </head>
 
 <body class="container">
@@ -39,16 +39,6 @@
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/scripts/showBlogNav.js"></script>
 </body>
-
-<script>
-    const burger = document.querySelector('.burger')
-    const nav = document.querySelector('.blog-nav')
-
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active')
-        burger.classList.toggle('toggle')
-    })
-</script>
-
 </html>
