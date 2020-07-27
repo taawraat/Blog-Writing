@@ -116,6 +116,9 @@ li a:hover {
 }
 
 @media only screen and (max-width:600px) {
+    .recent {
+        margin-top: 15%;
+    }
 
     .about {
         margin-top: 27%;
@@ -161,12 +164,14 @@ li a:hover {
     }
 
     .social {
-        margin-top: 30px;
+        margin-right: 3%;
+        margin-top: 20%;
     }
 
     .social a svg {
-        height: 7%;
-        width: 7%;
+        margin-left: 2%;
+        height: 10%;
+        width: 10%;
     }
 }
 
