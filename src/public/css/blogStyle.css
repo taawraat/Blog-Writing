@@ -8,7 +8,9 @@ body {
 }
 
 .blog {
+    font-size: large;
     width: 71%;
+    line-height: 1.8;
 }
 
 .burger {
