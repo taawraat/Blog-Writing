@@ -53,8 +53,14 @@ li a:hover {
 .about {
     font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
+    justify-content: center;
     margin-top: 10%;
     color: rgb(112, 109, 109);
+}
+
+.about strong p {
+    width: 50%;
+    margin-left: 25%;
 }
 
 .about svg {
@@ -70,6 +76,10 @@ li a:hover {
     text-align: center;
     height: 4%;
     width: 4%;
+}
+
+#link {
+    text-decoration: none;
 }
 
 .card-body:hover {
@@ -106,6 +116,11 @@ li a:hover {
 }
 
 @media only screen and (max-width:600px) {
+    .about strong p {
+        width: 100%;
+        margin-left: 0%;
+    }
+
     .burger {
         z-index: 1;
         margin: 5px;
@@ -113,11 +128,16 @@ li a:hover {
     }
 
     .body {
+        margin-top: 5%;
         overflow-x: hidden;
     }
 
     nav li a svg {
         display: none;
+    }
+
+    .nav-links li {
+        margin-top: 10%;
     }
     .nav-links {
         z-index: -1;

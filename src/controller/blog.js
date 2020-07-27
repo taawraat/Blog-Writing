@@ -1,5 +1,9 @@
 const Blog = require('../models/blog');
 const queryString = require('query-string')
+const marked = require('marked');
+const createDomPurify = require('dompurify');
+const { JSDOM } = require('jsdom');
+const dompurify = createDomPurify(new JSDOM().window);
 
 
 const blog = async (req, res) => {
@@ -49,9 +53,10 @@ const edit = async (req,res) => {
     const blog = await Blog.findByIdAndUpdate(req.params.id,{
         title: req.body.title,
         description: req.body.description,
-        markdown: req.body.markdown
+        markdown: req.body.markdown,
+        sanitizedHtlml: dompurify.sanitize(marked(req.body.markdown,{langPrefix: 'language-'}))
     });
-
+    
     res.send('edited')
 }
 
