@@ -52,6 +52,12 @@ app.get('/', (req,res) => {
     res.render('index');
 })
 
+
+//ssl certificate validation
+app.get('/.well-known/pki-validation/7DBF9E39D236051771DCA4B4361D7C2E.txt',(req,res) => {
+    res.sendFile('/.well-known/pki-validation/7DBF9E39D236051771DCA4B4361D7C2E.txt')
+})
+
 app.use('/auth/my/secret/path', auth);
 app.use('/blog', blogRoute);
 app.use('/contact', contactRoute);
