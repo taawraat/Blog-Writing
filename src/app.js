@@ -4,6 +4,7 @@ const http = require('http');
 const server = http.createServer(app);
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+const path = require('path');
 const session = require('express-session');
 const methodOverride = require('method-override');
 const blogRoute = require('./routes/blog');
@@ -55,7 +56,13 @@ app.get('/', (req,res) => {
 
 //ssl certificate validation
 app.get('/.well-known/pki-validation/7DBF9E39D236051771DCA4B4361D7C2E.txt',(req,res) => {
-    res.sendFile('/.well-known/pki-validation/7DBF9E39D236051771DCA4B4361D7C2E.txt')
+    res.sendFile('/.well-known/pki-validation/7DBF9E39D236051771DCA4B4361D7C2E.txt');
+})
+
+//sitemap route
+app.get('/sitemap.xml', (req,res) => {
+    res.contentType('application/xml');
+    res.sendFile(path.join(__dirname , '/public/sitemap/sitemap.xml'));
 })
 
 app.use('/auth/my/secret/path', auth);
