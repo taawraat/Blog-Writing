@@ -59,6 +59,7 @@ li a:hover {
 }
 
 .about strong p {
+    font-size: 1.5rem;
     width: 50%;
     margin-left: 25%;
 }
