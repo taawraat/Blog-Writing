@@ -29,12 +29,12 @@
             <li class="mr-3 mb-2"><a href="/contact">CONTACT</a></li>
         </ul>
     </nav>
-    <div class="blog-body mt-3 mb-3">
+    <div class="blog-body mt-3">
         <h2 class="mb-1 text-info"> <%= blog.title %> </h2>
         <div class="text-muted mb-4">
             <%= blog.createdAt.toLocaleDateString("en-BD", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
         </div>
-        <div class="blog text-light">
+        <div class="blog text-light mb-5">
             <%- blog.sanitizedHtlml %>
         </div>
     </div>
