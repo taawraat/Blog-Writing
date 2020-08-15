@@ -35,11 +35,9 @@ padding: 20px 22px;
 text-decoration: none;
 }
 
-li a svg {
-    background-color: rgb(131, 131, 131);
-    border-radius: 50%;
-    height: 60px;
-    width: 55px;
+li a img {
+    height: 70px;
+    width: 70px;
     display: inline-block;
 }
 
@@ -141,7 +139,7 @@ li a:hover {
         overflow-x: hidden;
     }
 
-    nav li a svg {
+    nav li a img {
         display: none;
     }
 
