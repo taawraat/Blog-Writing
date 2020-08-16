@@ -29,15 +29,15 @@ li a {
 font-size: 18px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
 display: block;
-color: rgb(112, 129, 110);
+color: #706d6d;
 text-align: center;
 padding: 20px 22px;
 text-decoration: none;
 }
 
 li a img {
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 98px;
     display: inline-block;
 }
 
@@ -52,7 +52,7 @@ li a:hover {
     font-family: "Comic Sans MS", cursive, sans-serif;
     text-align: center;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 8%;
     color: rgb(112, 109, 109);
 }
 
