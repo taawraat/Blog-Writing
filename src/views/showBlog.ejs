@@ -26,7 +26,7 @@
         <div class="text-muted mb-4">
             <%= blog.createdAt.toLocaleDateString("en-BD", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %>
         </div>
-        <div class="blog text-light mb-5">
+        <div class="blog text-dark mb-5">
             <%- blog.sanitizedHtlml %>
         </div>
     </div>

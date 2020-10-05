@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 const session = require('express-session');
@@ -15,7 +15,6 @@ const flash = require('connect-flash');
 
 require('./controller/config/passport')(passport);
 
-dotenv.config();
 
 mongoose.connect(process.env.URI,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false},
