@@ -66,6 +66,7 @@ body {
         position: relative;
         z-index: 4;
         margin: 5px;
+        margin-left: 20px;
         display: block;
     }
 
@@ -96,8 +97,7 @@ body {
 
 @media only screen and (max-width:800px) {
     .blog {
-        margin: 5px;
-        width: 95%;
+        width: 92%;
     }
 }
 
